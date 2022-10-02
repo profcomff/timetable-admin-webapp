@@ -9,6 +9,7 @@
     "serve:standalone": "vue-cli-service serve --mode standalone"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.15",
     "core-js": "^3.8.3",
     "single-spa-vue": "^2.1.0",
     "vue": "^3.2.40",

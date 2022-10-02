@@ -5,6 +5,18 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import VMdEditor from '@kangc/v-md-editor';
+import '@kangc/v-md-editor/lib/style/base-editor.css';
+import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
+import '@kangc/v-md-editor/lib/theme/style/github.css';
+import hljs from 'highlight.js';
+import ruRU from '@kangc/v-md-editor/lib/lang/ru-RU';
+
+VMdEditor.use(githubTheme, {
+  Hljs: hljs,
+}).lang.use('ru-RU', ruRU);
+
+
 const vueLifecycles = singleSpaVue({
   createApp,
   appOptions: {
@@ -24,6 +36,7 @@ const vueLifecycles = singleSpaVue({
   handleInstance(app) {
     app.use(router);
     app.use(store);
+    app.use(VMdEditor);
   },
 });
 
